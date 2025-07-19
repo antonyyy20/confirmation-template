@@ -1,9 +1,4 @@
 services:
-  auth:
-    environment:
-      # Map mailer template url stored in .env to the GOTRUE env var
-      GOTRUE_MAILER_TEMPLATES_CONFIRMATION: ${MAILER_TEMPLATES_CONFIRMATION}
-
   # Add nginx to serve static html
   nginx:
     container_name: supabase-nginx
