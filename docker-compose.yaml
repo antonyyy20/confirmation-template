@@ -13,6 +13,3 @@ services:
       # you can check the networks with `docker network ls` 
       # and see whats running within a network with `docker network inspect {network-name}`
 
-networks:
-  supabase_default: # Ensure this matches your existing network setup
-    external: true
