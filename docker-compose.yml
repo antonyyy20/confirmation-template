@@ -1,6 +1,6 @@
 services:
   nginx:
-    container_name: supabase-nginx
+    container_name: antonyyy20/confirmation-template:main-v8s088ksocckwk0ck8wsoswg
     image: nginx:alpine
     restart: unless-stopped
     ports:
