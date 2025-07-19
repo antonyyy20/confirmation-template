@@ -1,0 +1,23 @@
+services:
+  auth:
+    environment:
+      # Map mailer template url stored in .env to the GOTRUE env var
+      GOTRUE_MAILER_TEMPLATES_CONFIRMATION: ${MAILER_TEMPLATES_CONFIRMATION}
+
+  # Add nginx to serve static html
+  nginx:
+    container_name: supabase-nginx
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "8080:80" # Expose port 8080 for your static files
+    volumes:
+      - ./local/path/to/template/folder:/usr/share/nginx/html:ro # Map your external static folder to the container
+    networks:
+      - supabase_default # Ensure this matches your existing network setup
+      # you can check the networks with `docker network ls` 
+      # and see whats running within a network with `docker network inspect {network-name}`
+
+networks:
+  supabase_default: # Ensure this matches your existing network setup
+    external: true
