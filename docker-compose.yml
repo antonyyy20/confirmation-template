@@ -1,5 +1,4 @@
-
-  # Add nginx to serve static html
+services:
   nginx:
     container_name: supabase-nginx
     image: nginx:alpine
